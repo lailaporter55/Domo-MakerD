@@ -5,9 +5,6 @@ const loginPage = (req, res) => {
     res.render('login');
 };
 
-const signupPage = (req, res) => {
-    res.render('signup');
-};
 
 const logout = (req, res) => {
     req.session.destroy(); //will remove a users session
@@ -60,7 +57,6 @@ const signup = async (req, res) => {
 
 module.exports = {
     loginPage,
-    signupPage,
     logout,
     login,
     signup
