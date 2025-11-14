@@ -39,7 +39,7 @@ const handleError = (message) => {
   };  
 
 const hideError = () => {
-    document.getElementbById('domoMessage').classList.add('hidden');
+    document.getElementById('domoMessage').classList.add('hidden');
 }; 
 module.exports = {
     handleError, 
