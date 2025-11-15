@@ -16,7 +16,18 @@ const handleDomo = (e, onDomoAdded) => {
         helper.handleError('All fields are required'); 
         return false; 
     }
-    helper.sendPost(e.target.agction, {name, age}, onDomoAdded); 
+
+    //determine level based on age
+    let level;
+    if (age < 5) {
+        level = 1;
+    } else if (age < 10) {
+        level = 2;
+    } else {
+        level = 3;
+    }
+
+    helper.sendPost(e.target.action, { name, age, level }, onDomoAdded); 
     return false; 
 }
 
@@ -33,6 +44,8 @@ const DomoForm = (props) => {
             <input id="domoName" type="text" name="name" placeholder="Domo Name" />
             <label htmlFor="age">Age: </label>
             <input id="domoAge" type="number" min="0" name="age" />
+            <label htmlFor="level">Level: </label>
+            <input id="domoLevel" type="number" min="1" name="level" />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
 
         </form>
@@ -68,6 +81,7 @@ const DomoList = (props) => {
                 <img src="/assets/img/domoface.jpeg" alt="domo face" class="domoFace"/>
                 <h3 className="domoName">Name: </h3>
                 <h3 className="domoAge">Age: </h3>
+                <h3 className="domoLevel">Level: </h3>
             </div>
         );
     });
@@ -99,4 +113,4 @@ const init = () => {
     root.render( <App /> );
 };
 
-window.onload = init; 
+window.onload = init;
