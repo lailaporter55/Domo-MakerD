@@ -23,7 +23,7 @@ const makeDomo = async (req, res) => {
     }
 }
 const makerPage = (req, res) => {
-    return res.reder('app');
+    return res.render('app');
 };
 
 //getDomos function to retrieve all of the domos belonging to the user
