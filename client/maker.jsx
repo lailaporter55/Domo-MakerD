@@ -91,6 +91,8 @@ const DomoList = (props) => {
     )
 }
 
+
+
 const App = () => {
     const [reloadDomos, setReloadDomos] = useState(false); 
 
@@ -105,6 +107,7 @@ const App = () => {
         </div>
     );
 };
+
 
 const init = () => {
     const root = createRoot(document.getElementById('app'));

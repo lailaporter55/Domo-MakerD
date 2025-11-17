@@ -14,6 +14,10 @@ const router = (app) => {
     app.get('/maker', mid.requiresLogin, controllers.Domo.makerPage);
     app.post('/maker', mid.requiresLogin, controllers.Domo.makeDomo); 
 
+    app.post('/createParty', mid.requiresLogin, controllers.Party.createParty);
+    app.get('/getParty', mid.requiresLogin, controllers.Party.getParty);
+    app.get('/getParties', mid.requiresLogin, controllers.Party.getParties);
+
     app.get('/', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
 }; 
 module.exports = router;
